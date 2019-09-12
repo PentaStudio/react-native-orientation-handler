@@ -1,0 +1,36 @@
+{
+  "name": "react-native-orientation-handler",
+  "title": "React Native Orientation Handler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Handle device orientation events and lock device screen to specific orientations.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "readmeFilename": "README.md",
+  "keywords": [
+    "react-native",
+    "orientation",
+    "lock orientation",
+    "orientation handler",
+    "screen",
+    "ios",
+    "android"
+  ],
+  "peerDependencies": {
+    "react-native": ">=0.53",
+    "react": "*"
+  },
+  "author": "Luis Meireles <luis.lc93@hotmail.com> (github.com/lmeireles)",
+  "contributors": [],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YatoStudio/react-native-orientation-handler.git",
+    "baseUrl": "https://github.com/YatoStudio/react-native-orientation-handler"
+  },
+  "bugs": {
+    "url": "https://github.com/YatoStudio/react-native-orientation-handler/issues"
+  },
+  "homepage": "https://github.com/YatoStudio/react-native-orientation-handler#readme"
+}
