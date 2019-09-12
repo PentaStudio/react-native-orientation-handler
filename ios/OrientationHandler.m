@@ -168,13 +168,13 @@ RCT_EXPORT_METHOD(lockToLandscape)
   UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
   NSString *orientationStr = [self getSpecificOrientationStr:orientation];
   if ([orientationStr isEqualToString:@"LANDSCAPE-LEFT"]) {
-    [Orientation setOrientation:UIInterfaceOrientationMaskLandscape];
+    [OrientationHandler setOrientation:UIInterfaceOrientationMaskLandscape];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
       [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
       [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
     }];
   } else {
-    [Orientation setOrientation:UIInterfaceOrientationMaskLandscape];
+    [OrientationHandler setOrientation:UIInterfaceOrientationMaskLandscape];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
       [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
       [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
@@ -187,7 +187,7 @@ RCT_EXPORT_METHOD(lockToLandscapeLeft)
   #if DEBUG
     NSLog(@"Locked to Landscape Left");
   #endif
-    [Orientation setOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+    [OrientationHandler setOrientation:UIInterfaceOrientationMaskLandscapeLeft];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
         [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger: UIInterfaceOrientationLandscapeLeft] forKey:@"orientation"];
@@ -200,7 +200,7 @@ RCT_EXPORT_METHOD(lockToLandscapeRight)
   #if DEBUG
     NSLog(@"Locked to Landscape Right");
   #endif
-  [Orientation setOrientation:UIInterfaceOrientationMaskLandscapeRight];
+  [OrientationHandler setOrientation:UIInterfaceOrientationMaskLandscapeRight];
   [[NSOperationQueue mainQueue] addOperationWithBlock:^ {
     // this seems counter intuitive
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
@@ -214,7 +214,7 @@ RCT_EXPORT_METHOD(unlockAllOrientations)
   #if DEBUG
     NSLog(@"Unlock All Orientations");
   #endif
-  [Orientation setOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
+  [OrientationHandler setOrientation:UIInterfaceOrientationMaskAllButUpsideDown];
 //  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //  delegate.orientation = 3;
 }
