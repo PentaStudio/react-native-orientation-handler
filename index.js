@@ -41,11 +41,12 @@ const getKey = listener => {
 };
 
 const Orientation = {
-    lockToPortrait: () => OrientationHandler.lockToPortrait,
-    lockToLandscape: () => OrientationHandler.lockToLandscape,
-    lockToLandscapeRight: () => OrientationHandler.lockToLandscapeRight,
-    lockToLandscapeLeft: () => OrientationHandler.lockToLandscapeLeft,
-    unlockAllOrientations: () => OrientationHandler.unlockAllOrientations,
+    lockToPortrait: OrientationHandler.lockToPortrait,
+    lockToLandscape: OrientationHandler.lockToLandscape,
+    lockToLandscapeRight: OrientationHandler.lockToLandscapeRight,
+    lockToLandscapeLeft: OrientationHandler.lockToLandscapeLeft,
+    unlockAllOrientations: OrientationHandler.unlockAllOrientations,
+    getInitialOrientation: OrientationHandler.initialOrientation,
 
     getOrientation: cb => {
         OrientationHandler.getOrientation((error, orientation) => {
@@ -96,9 +97,7 @@ const Orientation = {
 
         listeners[key].remove();
         listeners[key] = null;
-    },
-
-    getInitialOrientation: () => OrientationHandler.initialOrientation
+    }
 };
 
 export default Orientation;
